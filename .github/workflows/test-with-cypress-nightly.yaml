@@ -20,3 +20,5 @@ jobs:
     needs: check-recent-commits
     if: needs.check-recent-commits.outputs.should-run == 'true'
     uses: ./.github/workflows/reusable-cypress.yaml
+    secrets:
+      CYPRESS_DEFAULT_USER: ${{ secrets.CYPRESS_DEFAULT_USER }}
