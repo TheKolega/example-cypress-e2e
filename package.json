@@ -1,0 +1,15 @@
+{
+  "name": "example-cypress-e2e",
+  "private": true,
+  "scripts": {
+    "test": "cd test && pnpm i && pnpm cypress run --e2e --browser=chrome",
+    "test-open": "cd test && pnpm i && pnpm cypress open --e2e --browser=chrome",
+    "test-remote": "pnpm test-open --env='grepTags=@remote'",
+    "start-app": "cd vue-ts && pnpm i && pnpm run dev"
+  },
+  "author": "milos.jov.rs@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.0.2"
+  }
+}
