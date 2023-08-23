@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "private": true,
+  "devDependencies": {
+    "@cypress/grep": "^3.1.5",
+    "@types/node": "^20.5.3",
+    "cypress": "^12.17.4",
+    "cypress-plugin-xhr-toggle": "^1.0.0",
+    "cypress-vite": "^1.4.2",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "../",
+    "esModuleInterop": true,
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "Node",
+    "noEmit": true,
+    "paths": {
+      "@cy-support/*": ["cypress/support/*"]
+    },
+    "strict": true,
+    "target": "ES2022",
+    "types": ["cypress", "vite", "node"]
+  },
+  "include": ["./**/*", "./vite.config.ts", "../cypress.config.ts"]
+}
