@@ -2,11 +2,10 @@ import { el } from "@cy-support/elements"
 
 describe("Tests local Vite+Vue3 webapp", { tags: "@local" }, () => {
   beforeEach(() => {
-    cy.visit("/")
+    cy.visit(Cypress.env("localUrl"))
   })
 
   it('shows app is loaded and the counter is enabled with the starting state of "0"', () => {
-    cy.visit("/")
     cy.url().should("contain", "localhost:7466")
     cy.contains("Vite + Vue").should("be.visible")
     cy.get(el.counterButton).should("be.enabled").and("contain", "count is 0")
@@ -19,7 +18,7 @@ describe("Tests local Vite+Vue3 webapp", { tags: "@local" }, () => {
       .should("contain", "count is 1")
       .then((previousState) => {
         cy.log(previousState.text())
-        cy.visit("/")
+        cy.reload()
         cy.get(el.counterButton).its("text").should("not.be.equal", previousState.text())
       })
   })

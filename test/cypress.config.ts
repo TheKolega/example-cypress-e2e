@@ -5,7 +5,7 @@ import path from "path"
 export default defineConfig({
   blockHosts: ["*.log.optimizely.com*"],
   e2e: {
-    baseUrl: "http://localhost:7466",
+    baseUrl: "http://the-internet.herokuapp.com",
     experimentalStudio: true,
     pageLoadTimeout: 10000,
     setupNodeEvents(on, config) {
@@ -39,7 +39,7 @@ export default defineConfig({
     grepFilterSpecs: true,
     grepOmitFiltered: true,
     hideXhr: true,
-    remoteUrl: "http://the-internet.herokuapp.com",
+    localUrl: "http://localhost:7466",
     cookieLoginUrl: "https://twopiharris.pythonanywhere.com/login",
     cookieVerifyUrl: "https://twopiharris.pythonanywhere.com/loginTest",
   },
