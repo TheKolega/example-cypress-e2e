@@ -23,7 +23,10 @@ jobs:
             ./pnpm-lock.yaml
             ./test/pnpm-lock.yaml
 
-      - name: Install test dependencies and run component tests
+      - name: Run webapp in background
+        run: nohup pnpm start-app &
+
+      - name: Install test dependencies and run tests
         uses: cypress-io/github-action@v6.0.1
         timeout-minutes: 10
         with:
