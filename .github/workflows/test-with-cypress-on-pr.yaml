@@ -7,3 +7,5 @@ on:
 jobs:
   call-reusable-cypress:
     uses: ./.github/workflows/reusable-cypress.yaml
+    secrets:
+      CYPRESS_DEFAULT_USER: ${{ secrets.CYPRESS_DEFAULT_USER }}
