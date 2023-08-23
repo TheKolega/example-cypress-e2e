@@ -1,0 +1,5 @@
+test_only:
+  - all: ["test/**/*"]
+
+ci/cd_only:
+  - all: [".github/**/*"]

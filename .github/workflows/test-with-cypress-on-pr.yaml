@@ -1,0 +1,9 @@
+name: Test with Cypress, on PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  call-reusable-cypress:
+    uses: ./.github/workflows/reusable-cypress.yaml

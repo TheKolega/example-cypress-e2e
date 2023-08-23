@@ -1,0 +1,22 @@
+name: Test with Cypress, nightly
+
+on:
+  schedule:
+    # "At 06:30 on every day-of-week from Tuesday through Saturday."
+    - cron: "30 6 * * 2-6"
+
+jobs:
+  check-recent-commits:
+    uses: ./.github/workflows/reusable-check-recent-commits.yaml
+
+  cancel-if-no-recent-commits:
+    needs: check-recent-commits
+    if: needs.check-recent-commits.outputs.should-run != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: andymckay/cancel-action@0.3
+
+  call-reusable-cypress:
+    needs: check-recent-commits
+    if: needs.check-recent-commits.outputs.should-run == 'true'
+    uses: ./.github/workflows/reusable-cypress.yaml

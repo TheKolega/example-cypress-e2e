@@ -1,0 +1,7 @@
+name: . Test with Cypress, manual
+
+on: workflow_dispatch
+
+jobs:
+  call-reusable-cypress:
+    uses: ./.github/workflows/reusable-cypress.yaml

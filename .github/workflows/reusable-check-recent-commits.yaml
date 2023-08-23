@@ -1,0 +1,27 @@
+name: Reusable, check for recent commits
+
+on:
+  workflow_call:
+    outputs:
+      should-run:
+        description: "Flag that shows if the last commit was less than a day ago, in which case the following flow should run"
+        value: ${{ jobs.reusable-check-recent-commits.outputs.should-run }}
+
+jobs:
+  reusable-check-recent-commits:
+    runs-on: ubuntu-latest
+    outputs:
+      should-run: ${{ steps.should-run.outputs.should-run }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Print latest_commit
+        run: echo ${{ github.sha }}
+
+      - name: Check if latest commit is less than a day ago
+        id: should-run
+        continue-on-error: true
+        if: github.event_name == 'schedule'
+        run: test -n $(git rev-list  --after="24 hours"  ${{ github.sha }}) && echo "should-run=true" >> $GITHUB_OUTPUT
