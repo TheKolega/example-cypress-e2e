@@ -21,7 +21,7 @@ jobs:
             ./test/pnpm-lock.json
 
       - name: Install test dependencies and run component tests
-        uses: cypress-io/github-action@v.0.1
+        uses: cypress-io/github-action@v6.0.1
         timeout-minutes: 10
         with:
           working-directory: test
