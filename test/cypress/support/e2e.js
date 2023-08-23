@@ -24,6 +24,19 @@ import "cypress-plugin-xhr-toggle"
 import registerCypressGrep from "@cypress/grep/src/support"
 registerCypressGrep()
 
+Cypress.on("uncaught:exception", (err, runnable) => {
+  console.log(`{err, runnable}: {${err}, ${runnable}}`)
+
+  return false
+})
+Cypress.on("uncaught:exception", (err, runnable, promise) => {
+  console.log(`{err, runnable}: {${err}, ${runnable}}`)
+  console.log("promise:")
+  console.log(promise)
+
+  return false
+})
+
 before(() => {
   if (!Cypress.env("defaultUser")) {
     const message = "=== Missing defaultUser env variable, please consult README.md ==="
