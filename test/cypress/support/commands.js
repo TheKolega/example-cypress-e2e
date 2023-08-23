@@ -26,7 +26,7 @@
 
 Cypress.Commands.add(
   "loginFormCookie",
-  (url = `${Cypress.env("remoteUrl")}/login`, userObject = Cypress.env("defaultUser")) => {
+  (url = `${Cypress.config("baseUrl")}/login`, userObject = Cypress.env("defaultUser")) => {
     cy.session(
       [url, userObject?.username, "loginFormCookie"],
       () => {
