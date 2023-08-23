@@ -1,0 +1,17 @@
+name: Block merging while 'Do not merge' label present
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [edited, labeled, opened, reopened, synchronize, unlabeled]
+
+jobs:
+  block-merging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if 'Do not merge' label present
+        if: "contains( github.event.pull_request.labels.*.name, 'Do not merge')"
+        run: |
+          echo "Do not merge label is present, throw error to avoid merging"
+          exit 1

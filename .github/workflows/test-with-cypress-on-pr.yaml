@@ -6,6 +6,7 @@ on:
 
 jobs:
   call-reusable-cypress:
+    if: "!contains(github.event.pull_request.labels.*.name, 'ci/cd_only')"
     uses: ./.github/workflows/reusable-cypress.yaml
     secrets:
       CYPRESS_DEFAULT_USER: ${{ secrets.CYPRESS_DEFAULT_USER }}
