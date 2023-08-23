@@ -7,6 +7,7 @@
     "test-remote": "pnpm test-open --env='grepTags=@remote'",
     "start-app": "cd vue-ts && pnpm i && pnpm run dev"
   },
+  "packageManager": "pnpm@8.6.12",
   "author": "milos.jov.rs@gmail.com",
   "license": "MIT",
   "devDependencies": {
