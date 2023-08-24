@@ -3,7 +3,20 @@ import vitePreprocessor from "cypress-vite"
 import path from "path"
 
 export default defineConfig({
-  blockHosts: ["*.log.optimizely.com*"],
+  blockHosts: [
+    "*.log.optimizely.com*",
+    "*ad.plus*",
+    "*adform*",
+    "*ads*",
+    "*amazon-adsystem*",
+    "*analytics*",
+    "*doubleclick*",
+    "*googleads*",
+    "*googlesyndication*",
+    "*googletag*",
+    "*mgida*",
+    "stat-rock*",
+  ],
   e2e: {
     baseUrl: "http://the-internet.herokuapp.com",
     experimentalStudio: true,
