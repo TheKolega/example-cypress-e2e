@@ -1,5 +1,9 @@
 # example-cypress-e2e
 
+Cypress e2e test examples with CI/CD integration
+
+###### For Cypress Component Testing examples, [look here](https://gitlab.com/TheKolega/example-cypress-ct).
+
 ### General testing
 
 On initial setup, create the Cypress secrets .env file
