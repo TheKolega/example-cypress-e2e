@@ -19,6 +19,7 @@ export default defineConfig({
   ],
   e2e: {
     baseUrl: "http://the-internet.herokuapp.com",
+    chromeWebSecurity: false,
     experimentalStudio: true,
     pageLoadTimeout: 10000,
     setupNodeEvents(on, config) {
@@ -57,4 +58,6 @@ export default defineConfig({
     cookieVerifyUrl: "https://twopiharris.pythonanywhere.com/loginTest",
   },
   video: false,
+  viewportHeight: 900,
+  viewportWidth: 1600,
 })

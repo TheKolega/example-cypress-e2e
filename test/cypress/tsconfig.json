@@ -13,5 +13,5 @@
     "target": "ES2022",
     "types": ["cypress", "vite", "node"]
   },
-  "include": ["./**/*", "./vite.config.ts", "../cypress.config.ts"]
+  "include": ["./**/*", "./vite.config.ts", "../cypress.config.ts", "../node_modules/cypress/**/*.*"]
 }
