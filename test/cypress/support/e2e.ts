@@ -21,6 +21,7 @@ import "./commands"
 
 import "cypress-plugin-xhr-toggle"
 
+// @ts-ignore
 import registerCypressGrep from "@cypress/grep/src/support"
 registerCypressGrep()
 
